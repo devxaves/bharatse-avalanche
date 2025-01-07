@@ -1,0 +1,125 @@
+.auth {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.auth .img {
+  animation: slide-down 0.5s ease;
+  max-width: 100%;
+  height: auto;
+}
+
+.auth .form {
+  width: 100%;
+  max-width: 35rem;
+  padding: 1.5rem;
+  animation: slide-up 0.5s ease;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.auth .form h2 {
+  color: var(--color-danger);
+  text-align: center;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  margin-bottom: 1rem;
+}
+
+.auth .form form input[type="text"],
+.auth .form form input[type="email"],
+.auth .form form input[type="password"] {
+  display: block;
+  font-size: clamp(1rem, 2.5vw, 1.6rem);
+  font-weight: 300;
+  padding: 0.8rem;
+  margin: 1rem auto;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-bottom: 3px solid #ccc;
+  border-radius: 3px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.auth .form form input:focus {
+  outline: none;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  border-bottom: 3px solid #55c57a;
+}
+
+.auth .form form input:focus:invalid {
+  border-bottom: 3px solid #ff7730;
+}
+
+.auth .form form .links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 1rem 0;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+}
+
+.auth .form form p {
+  text-align: center;
+  margin: 1rem 0;
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+}
+
+.auth .form .register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(-5rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-down {
+  0% {
+    transform: translateY(5rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .auth {
+    flex-direction: column;
+  }
+
+  .auth .img {
+    margin-bottom: 2rem;
+    max-width: 80%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .auth .form {
+    padding: 1rem;
+  }
+
+  .auth .form form .links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .auth .form form .links > * {
+    margin-bottom: 0.5rem;
+  }
+}
